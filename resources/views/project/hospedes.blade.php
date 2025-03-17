@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Quartos | sistema de gestão de hotel</title>
+    <title>Hospedes | sistema de gestão de hotel</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -69,15 +69,9 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3">
-        <h1 class="h2">Quartos disponíveis</h1>
+        <h1 class="h2">Hospedes</h1>
         <div class="btn-toolbar mb-md-0">
-            <a href="/add-quarto">
-                <button type="button" class="btn btn-sm btn-outline-secondary m-1">
-                    Adicionar um quato
-                </button>
-            </a>
-          
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  m-1">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             Dionísio Neto
           </button>
@@ -89,8 +83,8 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">Número de quarto</th>
-              <th scope="col">Preço</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Tipodo quarto</th>
               <th scope="col">Status</th>
               <th scope="col">Descrição</th>
               <th scope="col">Data de edição</th>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Quartos | sistema de gestão de hotel</title>
+    <title>Hospedes | sistema de gestão de hotel</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -29,6 +29,91 @@
           font-size: 3.5rem;
         }
       }
+
+      
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 900;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
     </style>
 
 
@@ -69,68 +154,34 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3">
-        <h1 class="h2">Quartos disponíveis</h1>
+        <h1 class="h2">Quarto</h1>
         <div class="btn-toolbar mb-md-0">
-            <a href="/add-quarto">
-                <button type="button" class="btn btn-sm btn-outline-secondary m-1">
-                    Adicionar um quato
-                </button>
-            </a>
-          
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  m-1">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             Dionísio Neto
           </button>
         </div>
       </div>
 
+      <hr>
+        
+      
 
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Número de quarto</th>
-              <th scope="col">Preço</th>
-              <th scope="col">Status</th>
-              <th scope="col">Descrição</th>
-              <th scope="col">Data de edição</th>
-              <th scope="col">Estado do produto</th>
-              <th scope="col">Data de edição</th>
-              <th scope="col">Editar</th>
-              <th scope="col">Ver</th>
-              <th scope="col">Excluir</th>
-            </tr>
-          </thead>
-          <tbody>
-              @foreach ($item as $itens)
-              <tr>
-                  <td>01</td>
-                  <td>2.000.00kz</td>
-                  <td>Vago</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
-                  <td>
-                      <a href="" class="btn btn-primary">Editar</a>
-                  </td>
-                  <td>
-                        <a href="" class="btn btn-primary">
-                            Ver
-                        </a>
-                    </td>
-                  <td>
-                      <a href="" class="btn btn-danger">
-                          Excluir
-                      </a>
-                  </td>
-              </tr>
-              @endforeach
-              <hr>
-              {{-- {{ $itens->links() }} --}}
-          </tbody>
-        </table>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Quarto número 404. <span class="text-muted">Quarto presidêncial.</span></h2>
+          <h3 class="text-green">2.000.00 AOA.</h3>
+          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur tempora sunt recusandae iure quidem laudantium, vel, deserunt voluptate inventore provident consectetur? Minima dignissimos, aliquam pariatur animi quasi laboriosam laudantium labore..</p>
+            <hr>
+            <div class="btn btn-outline-success mb-2">Quarto vago </div>
+            <div class="btn btn-outline-danger mb-2">Quarto ocupado </div>
+        </div>
+        <div class="col-md-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+  
+        </div>
       </div>
+
     </main>
   </div>
 </div>

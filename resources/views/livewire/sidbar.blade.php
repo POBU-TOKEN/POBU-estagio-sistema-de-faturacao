@@ -21,6 +21,18 @@
               </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{Request::is('add-quarto') ? 'active' : ''}}" href="/add-quarto">
+                  <span data-feather="file"></span>
+                  Adicionar quarto
+                </a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link {{Request::is('hospedes') ? 'active' : ''}}" href="/hospedes">
+                  <span data-feather="file"></span>
+                  Hospedes
+                </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link {{Request::is('faturas') ? 'active' : ''}}" href="/faturas">
                 <span data-feather="shopping-cart"></span>
                 Faturas

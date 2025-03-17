@@ -10,6 +10,8 @@ Route::get('/', function () {
 
 Route::get('/quartos', [ProdutoController::class, 'quarto']);
 
+Route::get('/hospedes', [ProdutoController::class, 'hospedes']);
+
 Route::get('/Check-in', [ProdutoController::class, 'checkin']);
 
 
@@ -21,7 +23,13 @@ Route::get('/', function () {
     return view('project.index');
 });
 
+Route::get('/ver', function () {
+    return view('project.ver');
+});
 
+Route::get('/add-quarto', function () {
+    return view('project.add-quarto');
+});
 
 
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller{
     public function quarto(){
-        $item = new Quarto();
+        $item = new Quarto;
         return view
         (
             'project.quarto',
@@ -20,6 +20,15 @@ class ProdutoController extends Controller{
 
     public function storage(){
 
+    }
+
+    public function hospedes(){
+        $item = new Quarto;
+
+        return view(
+            'project.hospedes',
+            ["item" => $item],
+        );
     }
 
     public function destroy(){
