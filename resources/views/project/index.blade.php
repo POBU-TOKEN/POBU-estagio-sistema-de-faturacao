@@ -29,7 +29,7 @@
           font-size: 3.5rem;
         }
       }
-      
+
     .themed-grid-col {
         padding-top: .75rem;
         padding-bottom: .75rem;
@@ -62,15 +62,17 @@
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
         @auth
-        <a class="nav-link px-3" href="#">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}"
-                         @click.prevent="$root.submit();">
-                    {{ __('Terminar sessão') }}
-                </a>
-            </form>
-        </a>
+        <form method="POST" action="{{ route('logout') }}"  class="nav-link px-3">
+            @csrf
+            <a
+                href="./logout"
+                onclick="event.preventDefault();
+                this.closest('form').submit();"
+                class="nav-link px-3"
+            >
+                Terminar sessão
+            </a>
+        </form>
         @endauth
         @guest
         <a class="nav-link px-3" href="/login">Iniciar sessão</a>
@@ -95,7 +97,7 @@
         </div>
       </div>
       <div>
-                  
+
       @if (session('sucess'))
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('sucess') }}
@@ -110,11 +112,11 @@
       </div>
       @endif
 
-      
+
 
         <div class="row row-cols-1 row-cols-md-3 gx-4 m-1">
             <div class="col themed-grid-col">
-                <h2>Usuáios: (0)</h2>
+                <h2>Usuáios: (  )</h2>
                 <div>Requisitos</div>
             </div>
 

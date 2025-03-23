@@ -15,8 +15,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    
-    Route::get('/index', [ProdutoController::class, 'index']);
+    Route::get('/dashboard', [ProdutoController::class, 'index'])->name('dashboard');
 
     Route::get('/quartos', [ProdutoController::class, 'quarto']);
 
@@ -31,10 +30,8 @@ Route::middleware([
     Route::get('/ver', function () {
         return view('project.ver');
     });
-    
-    Route::get('/dashboard', function () {
-        return view('project.dashboard');
-    })->name('dashboard');
+
+
 });
 
 
