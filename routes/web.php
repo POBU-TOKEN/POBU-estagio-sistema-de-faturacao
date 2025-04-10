@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/reserve-online', [ProdutoController::class, 'reserva_on']);
+route::post('/storage-reserva-on', [ProdutoController::class, 'storage_reserva_on']);
 
 
 Route::middleware([
@@ -30,7 +31,6 @@ Route::middleware([
     Route::get('/ver', function () {
         return view('project.ver');
     });
-
 
 });
 
