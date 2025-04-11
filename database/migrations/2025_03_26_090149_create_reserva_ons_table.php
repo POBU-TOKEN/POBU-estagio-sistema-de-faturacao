@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('address');
             $table->string('email');
             $table->string('country');
-            // $table->dateTime('was_born');
-            // $table->dateTime('check_out_date');
+            $table->date('was_born');
+            $table->date('check_out_date');
             $table->text('description');
-            $table->boolean('sex');
+            $table->string('sex');
             $table->string('document');
             $table->string('host_type');
             $table->string('people');
