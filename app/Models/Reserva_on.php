@@ -12,12 +12,8 @@ class Reserva_on extends Model{
         'items' => 'array',
     ];
 
-
-    // protected $dates = [
-    //     'check_out_date',
-    //     'was_born'
-    // ];
-
-    // protected $check_out_date = ['date'];
-    // protected $was_born = ['date'];
+    protected $fillable = [
+        'check_out_date',
+        'was_born'
+    ];
 }
