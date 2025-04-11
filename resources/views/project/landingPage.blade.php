@@ -4,7 +4,18 @@
 
 
 @section('content')
-
+@if (session('msg'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('msg') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('erro'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('erro') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
