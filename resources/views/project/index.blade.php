@@ -90,9 +90,8 @@
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
 
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            Dionísio
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            {{ auth()->user()->name }}
           </button>
         </div>
       </div>
@@ -115,18 +114,22 @@
 
 
         <div class="row row-cols-1 row-cols-md-3 gx-4 m-1">
+          <div class="col themed-grid-col">
+            <h2>Reservas: ( {{ $reserva_on->count() }} )</h2>
+            <div>Requisitos</div>
+          </div>
             <div class="col themed-grid-col">
-                <h2>Usuáios: (  )</h2>
+                <h2>Usuáios: ( {{ $user->count() }} )</h2>
                 <div>Requisitos</div>
             </div>
 
             <div class="col themed-grid-col">
-                <h2>Quatos vagos: (0)</h2>
+                <h2>Hospedes: ( {{ $hospedes->count() }} )</h2>
                 <div>Requisitos</div>
             </div>
 
             <div class="col themed-grid-col">
-                <h2>Quartos ocupados: (0)</h2>
+                <h2>Quartos: ( {{ $reserva_on->count() }} )</h2>
                 <div>Requisitos</div>
             </div>
         </div>
