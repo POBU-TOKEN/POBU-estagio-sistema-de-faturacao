@@ -21,6 +21,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link {{Request::is('reservas') ? 'active' : ''}}" href="/reservas">
+                <span data-feather="file"></span>
+                Reservas
+              </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{Request::is('add-quarto') ? 'active' : ''}}" href="/add-quarto">
                   <span data-feather="file"></span>
                   Adicionar quarto
