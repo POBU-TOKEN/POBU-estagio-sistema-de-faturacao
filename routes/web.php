@@ -31,6 +31,8 @@ Route::middleware([
     Route::get('/ver', function () {
         return view('project.ver');
     });
+    
+    Route::get('/reservas', [ProdutoController::class, 'reservas']);
 
 });
 
