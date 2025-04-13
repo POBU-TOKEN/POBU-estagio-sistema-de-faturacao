@@ -12,15 +12,18 @@ use App\Models\{
 
 class ProdutoController extends Controller{
     public function index(){
-        $quarto = new Quarto;
-        $hospedes = new Hospede;
-        $user = new User;
+        $quarto = Quarto::get();
+        $hospedes = Hospede::get();
+        $user = User::get();
+        $reserva_on = Reserva_on::get();
+
         return view(
             'project.index',
             [
                 'quarto' => $quarto,
                 'hospedes' => $hospedes,
-                'user ' => $user,
+                'user' => $user,
+                'reserva_on' => $reserva_on,
             ]
         );
     }
@@ -66,6 +69,15 @@ class ProdutoController extends Controller{
     public function reserva_on(){
         return view('project.reserva-on');
     }
+    public function reservas(){
+        $item = Reserva_on::latest()->paginate();
+        return view(
+            'project.reservas',
+            [
+                "item" => $item
+            ]
+        );
+    }
 
     
 
@@ -93,7 +105,7 @@ class ProdutoController extends Controller{
             'number.numeric' => 'Valor deve ser numerico',
             'cNumber.required' => 'O número de contribuente é necessário',
             'cNumber.numeric' => 'Valor deve ser numerico',
-            'address.required' => 'O indereço é obrigatório',
+            'address.required' => 'O morada é obrigatório',
             'address.max' => 'Valor máximo é :max',
             'emailAddress.required' => 'O campo email é necessário',
             'emailAddress.max' => 'Valor máximo é :max',
@@ -105,7 +117,7 @@ class ProdutoController extends Controller{
             'hostType.required' => 'O tipo de hospede é necessário',
             'checkOut.required' => 'Data de checkout é necessário',
             'born.required' => 'Data de nascimento é necessário',
-            ]);
+        ]);
 
         $res = new Reserva_on();
         $res->name = $req->name;

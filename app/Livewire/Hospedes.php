@@ -24,11 +24,11 @@ class Hospedes extends Component{
     public function store(){
 
         $this->validate([
-            'name' => 'required',
+            'name' => 'required|string',
             'number' => 'required|numeric',
             'cNumber' => 'required|numeric',
             'address' => 'required',
-            'emailAddress' => 'required',
+            'emailAddress' => 'required|email',
             'country' => 'required',
             'born' => 'required',
             'checkOut' => 'required',
@@ -37,7 +37,24 @@ class Hospedes extends Component{
             'document' => 'required',
             'hostType' => 'required',
             'ocupantes' => 'required|numeric',
-
+        ],[
+            'name.required' => 'O nome é necessário', 
+            'name.string' => 'Os caracteres não devem ser numeríco ou simbolos',
+            'number.required' => 'O número de telefone é obrigatório',
+            'number.numeric' => 'O número de telefone deve ser apenas numeríco',
+            'cNumber.required' => 'O número de contribuente é obrigatório',
+            'cNumber.numeric' => 'O número de contribuente deve ser apenas numeríco',
+            'address.required' => 'A morada é necessária',
+            'emailAddress.required' => 'O email é necessário',
+            'emailAddress.email' => 'O email não existe',
+            'country.required' => 'O país é necessário',
+            'born.required' => 'A data de nasciento é necessária',
+            'checkOut' => 'A data de checkout é necessário',
+            'description' => 'A descrição é necessário',
+            'sexo' => 'O sexo é necessário',
+            'document' => 'O documento é necessário',
+            'hostType' => 'O tipo de hospede é necessário',
+            'ocupantes' => 'O número de ocupantes é necessário',
         ]);
 
         $quarto = new Hospede();
@@ -59,6 +76,7 @@ class Hospedes extends Component{
 
         if($quarto->save()){
             session('msg', 'O hospede, ' . $this->name .'foi adicionado com sucesso');
+            
             $this->name = $this->number = $this->cNumber = 
             $this->address = $this->emailAddress = $this->country =
             $this->born = $this->checkOut = $this->description =
