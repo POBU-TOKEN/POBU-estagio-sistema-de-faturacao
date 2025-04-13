@@ -6,9 +6,8 @@
                 <button type="button" class="btn btn-sm btn-outline-secondary m-1">
                     Importar CSV
                 </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  m-1">
-                    <span data-feather="calendar"></span>
-                    Dionísio Neto
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                    {{ auth()->user()->name }}
                 </button>
                 @if(session('msg'))
                     {{ session('msg') }}

@@ -45,21 +45,23 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-        @auth
-        <a class="nav-link px-3" href="#">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}"
-                         @click.prevent="$root.submit();">
-                    {{ __('Terminar sessão') }}
-                </a>
-            </form>
-        </a>
-        @endauth
-        @guest
-        <a class="nav-link px-3" href="/login">Iniciar sessão</a>
-        @endguest
-    </div>
+      @auth
+      <form method="POST" action="{{ route('logout') }}"  class="nav-link px-3">
+          @csrf
+          <a
+              href="./logout"
+              onclick="event.preventDefault();
+              this.closest('form').submit();"
+              class="nav-link px-3"
+          >
+              Terminar sessão
+          </a>
+      </form>
+      @endauth
+      @guest
+      <a class="nav-link px-3" href="/login">Iniciar sessão</a>
+      @endguest
+  </div>
   </div>
 </header>
 
