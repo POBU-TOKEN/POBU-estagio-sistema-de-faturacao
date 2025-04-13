@@ -75,7 +75,7 @@ class Hospedes extends Component{
         $quarto->user_id = auth()->user()->id;
 
         if($quarto->save()){
-            session('msg', 'O hospede, ' . $this->name .'foi adicionado com sucesso');
+            session()->flash('msg', 'O hospede, ' . $this->name .'foi adicionado com sucesso');
             
             $this->name = $this->number = $this->cNumber = 
             $this->address = $this->emailAddress = $this->country =
@@ -83,7 +83,7 @@ class Hospedes extends Component{
             $this->sexo = $this->document = $this->hostType =
             $this->ocupantes = null;
         }else{
-            session('erro', 'Ocorreu algum erro ao adicionar hospede, atualize o navegador e tente novamente');
+            session()->flash('erro', 'Ocorreu algum erro ao adicionar hospede, atualize o navegador e tente novamente');
         }
     }
     public function render(){
