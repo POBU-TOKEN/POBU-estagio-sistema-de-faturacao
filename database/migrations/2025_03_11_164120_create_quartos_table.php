@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
-            $table->string('price');
+            $table->string('preco');
+            $table->string('quarto_numero');
             $table->boolean('status')->default(1);
-            $table->text('description');
-            $table->string('photo_1');
-            $table->string('photo_2');
-            $table->string('host');
+            $table->text('descricao');
+            $table->string('foto');
+            $table->string('camas');
+            $table->string('ocupado_por');
             $table->string('user_id');
             $table->timestamps();
         });

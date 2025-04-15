@@ -25,11 +25,6 @@
                         <div class="col-sm-6">
                             <label for="name" class="form-label">Nome do hospede</label>
                             <input type="text" class="form-control" id="name" wire:model='name' placeholder="Digite o nome completo">
-                            <div class="invalid-feedback">
-                                @error('name')
-                                    {{ $message }}
-                                @enderror
-                            </div>
                         </div>
 
                         <div class="col-sm-6">

@@ -75,7 +75,7 @@ class Hospedes extends Component{
         $quarto->user_id = auth()->user()->id;
 
         if($quarto->save()){
-            session()->flash('msg', 'O hospede, ' . $this->name .'foi adicionado com sucesso');
+            session()->flash('msg', 'O hospede ' . $this->name .' foi adicionado com sucesso');
             
             $this->name = $this->number = $this->cNumber = 
             $this->address = $this->emailAddress = $this->country =

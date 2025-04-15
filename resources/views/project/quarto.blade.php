@@ -45,21 +45,22 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-        @auth
-        <a class="nav-link px-3" href="#">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}"
-                         @click.prevent="$root.submit();">
-                    {{ __('Terminar sessão') }}
-                </a>
-            </form>
-        </a>
-        @endauth
-        @guest
-        <a class="nav-link px-3" href="/login">Iniciar sessão</a>
-        @endguest
-    </div>
+      @auth
+      <form method="POST" action="{{ route('logout') }}"  class="nav-link px-3">
+          @csrf
+          <a
+              href="./logout"
+              onclick="event.preventDefault();
+              this.closest('form').submit();"
+              class="nav-link px-3"
+          >
+              Terminar sessão
+          </a>
+      </form>
+      @endauth
+      @guest
+      <a class="nav-link px-3" href="/login">Iniciar sessão</a>
+      @endguest
   </div>
 </header>
 
@@ -93,9 +94,7 @@
               <th scope="col">Preço</th>
               <th scope="col">Status</th>
               <th scope="col">Descrição</th>
-              <th scope="col">Data de edição</th>
-              <th scope="col">Estado do produto</th>
-              <th scope="col">Data de edição</th>
+              <th scope="col">Números de camas</th>
               <th scope="col">Editar</th>
               <th scope="col">Ver</th>
               <th scope="col">Excluir</th>
@@ -104,13 +103,13 @@
           <tbody>
               @foreach ($item as $itens)
               <tr>
-                  <td>01</td>
-                  <td>2.000.00kz</td>
-                  <td>Vago</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
+                  <td>{{ $itens->quarto_numero }}</td>
+                  <td>{{ $itens->preco }}</td>
+                  <td>
+                    @if ($itens->status) Vago @else Ocupado @endif
+                  </td>
+                  <td>{{ $itens->descricao }}</td>
+                  <td>{{ $itens->camas }}</td>
                   <td>
                       <a href="" class="btn btn-primary">Editar</a>
                   </td>
