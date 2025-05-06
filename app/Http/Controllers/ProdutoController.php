@@ -141,4 +141,9 @@ class ProdutoController extends Controller{
             return redirect('/')->with('erro', 'Algo deu errado, tente mais tarde ou actualize seu browser e tente novamente.');
         }
     }
+
+    public function ver_reserve($id){
+        $item = Reserva_on::findOrFail($id);
+        return view('project.ver-reserve', ['item' => $item]);
+    }
 }

@@ -34,6 +34,7 @@ Route::middleware([
     
     Route::get('/reservas', [ProdutoController::class, 'reservas']);
 
+    route::get('ver-reserva-{id}', [ProdutoController::class, 'ver_reserve']);
 });
 
 
